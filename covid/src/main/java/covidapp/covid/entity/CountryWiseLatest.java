@@ -3,9 +3,33 @@ package covidapp.covid.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * Country Wise Latest Entity
+ * 
+ * Represents country-wise COVID-19 statistics
+ * Maps to the "country_wise_latest" table in the database
+ * 
+ * Fields:
+ * - country: Primary key, country name
+ * - confirmed: Total confirmed cases
+ * - deaths: Total deaths
+ * - recovered: Total recovered cases
+ * - active: Currently active cases
+ * - newCases: New cases reported
+ * - newDeaths: New deaths reported
+ * - newRecovered: New recoveries reported
+ * - deathsPer100Cases: Death rate per 100 cases
+ * - recoveredPer100Cases: Recovery rate per 100 cases
+ * - deathsPer100Recovered: Death rate per 100 recoveries
+ * - confirmedLastWeek: Cases confirmed last week
+ * - oneWeekChange: Change in cases over one week
+ * - oneWeekPercentIncrease: Percentage increase over one week
+ * - whoRegion: WHO region classification
+ * - redAlert: Transient field (not in DB) - calculated based on deaths:recovered ratio
+ */
 @Entity
 @Table(name = "country_wise_latest")
-@Data
+@Data // Lombok annotation - automatically generates getters, setters, toString, equals, hashCode
 public class CountryWiseLatest {
 
     @Id
@@ -54,7 +78,18 @@ public class CountryWiseLatest {
     @Column(name = "WHO Region")
     private String whoRegion;
 
-    // ✅ Add this field (NOT stored in DB)
-    @Transient
+    /**
+     * Red Alert Flag (Transient Field)
+     * 
+     * This field is NOT stored in the database (@Transient annotation)
+     * It is calculated dynamically in the service layer
+     * 
+     * Red Alert Logic:
+     * - true: If deaths:recovered ratio > 1:10 (deaths/recovered > 0.1)
+     * - false: Otherwise
+     * 
+     * Used in frontend to highlight countries with high mortality rates
+     */
+    @Transient // Not persisted to database
     private boolean redAlert;
 }

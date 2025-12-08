@@ -17,7 +17,18 @@ public class DayWiseService {
     }
 
     public List<DayWise> getAll() {
-        return repository.findAll();
+        try {
+            List<DayWise> data = repository.findAll();
+            // Return empty list if null (shouldn't happen, but safety check)
+            return data != null ? data : new java.util.ArrayList<>();
+        } catch (Exception e) {
+            // Log the error for debugging
+            System.err.println("Error fetching day-wise data: " + e.getMessage());
+            e.printStackTrace();
+            // Return empty list instead of throwing exception
+            // This prevents 500 error if table doesn't exist
+            return new java.util.ArrayList<>();
+        }
     }
 
     public DayWise getById(Long id) {
