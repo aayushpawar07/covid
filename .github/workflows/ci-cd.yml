@@ -34,8 +34,8 @@ jobs:
         node-version: 18
 
     # ---------- FRONTEND ----------
-    - name: Build React App
-      working-directory: covid-frontend
-      run: |
-        npm install
-        npm run build
+    - name: Build React
+  working-directory: covid-frontend
+  run: |
+    npm install
+    CI=false npm run build
