@@ -10,32 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # ---------- SETUP JAVA ----------
-    - name: Setup Java 21
-      uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 21
+      # ---------- SETUP JAVA ----------
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
 
-    # ---------- BACKEND ----------
-    - name: Build Spring Boot
-      working-directory: covid
-      run: |
-        chmod +x mvnw
-        ./mvnw clean package -DskipTests
+      # ---------- BACKEND ----------
+      - name: Build Spring Boot
+        working-directory: covid
+        run: |
+          chmod +x mvnw
+          ./mvnw clean package -DskipTests
 
-    # ---------- SETUP NODE ----------
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
+      # ---------- SETUP NODE ----------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    # ---------- FRONTEND ----------
-    - name: Build React
-  working-directory: covid-frontend
-  run: |
-    npm install
-    CI=false npm run build
+      # ---------- FRONTEND ----------
+      - name: Build React App
+        working-directory: covid-frontend
+        run: |
+          npm install
+          CI=false npm run build
