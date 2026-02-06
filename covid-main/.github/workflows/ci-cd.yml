@@ -13,14 +13,27 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # ---------- BACKEND (Spring Boot) ----------
+    # ---------- SETUP JAVA ----------
+    - name: Setup Java 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 17
+
+    # ---------- BACKEND ----------
     - name: Build Spring Boot
       working-directory: covid
       run: |
         chmod +x mvnw
         ./mvnw clean package -DskipTests
 
-    # ---------- FRONTEND (React) ----------
+    # ---------- SETUP NODE ----------
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    # ---------- FRONTEND ----------
     - name: Build React App
       working-directory: covid-frontend
       run: |
