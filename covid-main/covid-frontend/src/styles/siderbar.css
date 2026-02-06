@@ -1,0 +1,61 @@
+/* Sidebar Styles */
+
+.sidebar-header {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 16px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #00E5FF 0%, #FF6B9D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.7;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 229, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar-footer:hover {
+  opacity: 1;
+  background: rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.2);
+}
+
+/* Sidebar navigation item animations */
+.sidebar-nav-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.1), rgba(255, 107, 157, 0.1));
+  transition: width 0.3s ease;
+  z-index: 0;
+}
+
+.sidebar-nav-item:hover::before {
+  width: 100%;
+}
+
+.sidebar-nav-item.active::before {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.15), rgba(255, 107, 157, 0.15));
+}

@@ -1,0 +1,28 @@
+name: Java + React CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # ---------- BACKEND (Spring Boot) ----------
+    - name: Build Spring Boot
+      working-directory: covid
+      run: |
+        chmod +x mvnw
+        ./mvnw clean package -DskipTests
+
+    # ---------- FRONTEND (React) ----------
+    - name: Build React App
+      working-directory: covid-frontend
+      run: |
+        npm install
+        npm run build
