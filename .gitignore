@@ -1,0 +1,74 @@
+# Compiled class files
+*.class
+target/
+covid/target/
+
+# Log files
+*.log
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven
+covid/target/
+covid/pom.xml.tag
+covid/pom.xml.releaseBackup
+covid/pom.xml.versionsBackup
+covid/pom.xml.next
+covid/release.properties
+covid/dependency-reduced-pom.xml
+covid/buildNumber.properties
+covid/.mvn/timing.properties
+covid/.mvn/wrapper/maven-wrapper.jar
+
+# Node modules
+node_modules/
+covid-frontend/node_modules/
+
+# Build files
+covid-frontend/build/
+covid-frontend/dist/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.classpath
+*.project
+*.settings/
+

@@ -1,0 +1,35 @@
+/* Modern App Styles */
+.App {
+  text-align: center;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Enhanced card hover effects */
+.MuiCard-root {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s ease;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease;
+}
+
+.scale-in {
+  animation: scaleIn 0.4s ease-out;
+}

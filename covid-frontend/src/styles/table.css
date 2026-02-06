@@ -1,0 +1,102 @@
+/* Generic messages (loading / error) */
+.table-message {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #8B949E;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Table wrapper with modern styling */
+.table-wrapper {
+  margin-top: 24px;
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(22, 27, 34, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(48, 54, 61, 0.5);
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Custom table styles */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.custom-table thead {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.2) 0%, rgba(255, 107, 157, 0.2) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.custom-table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #00E5FF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid rgba(0, 229, 255, 0.3);
+}
+
+.custom-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.3);
+  font-size: 0.9375rem;
+  color: #F0F6FC;
+  transition: all 0.2s ease;
+}
+
+.custom-table tbody tr {
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background: rgba(0, 229, 255, 0.02);
+}
+
+.custom-table tbody tr:hover {
+  background: rgba(0, 229, 255, 0.08);
+  transform: translateX(2px);
+  box-shadow: inset 4px 0 0 rgba(0, 229, 255, 0.5);
+}
+
+/* Red alert rows */
+.red-alert-row {
+  background-color: rgba(255, 82, 82, 0.15) !important;
+  color: #FF5252 !important;
+  font-weight: 600 !important;
+  border-left: 4px solid #FF5252 !important;
+  transition: all 0.3s ease;
+}
+
+.red-alert-row:hover {
+  background-color: rgba(255, 82, 82, 0.25) !important;
+  box-shadow: inset 4px 0 0 #FF5252 !important;
+}
+
+/* Scrollbar for table wrapper */
+.table-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #00E5FF 0%, #FF6B9D 100%);
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: rgba(22, 27, 34, 0.5);
+  border-radius: 10px;
+}
